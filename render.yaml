@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: aura-x-team-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
