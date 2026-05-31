@@ -65,11 +65,11 @@ verified_users: set = set()
 
 MAIN_MENU = ReplyKeyboardMarkup(
     [
-        [KeyboardButton("🗂️ Source Code"),      KeyboardButton("🔓 HTML Decode")],
-        [KeyboardButton("🔓 Python Decoder"),   KeyboardButton("🔒 Python Encrypt")],
-        [KeyboardButton("🔒HTML Encrypt"),     KeyboardButton("🔓 PHP Decoder")],
-        [KeyboardButton("🪧 User Info"),        KeyboardButton("🔒 JS Encrypt")],
-        [KeyboardButton("🖥️ Bot Info"),         KeyboardButton("🔧Developer Info")],
+        [KeyboardButton("🔵 Source Code"),      KeyboardButton("🔵 HTML Decode")],
+        [KeyboardButton("🟢 Python Decoder"),   KeyboardButton("🟢 Python Encrypt")],
+        [KeyboardButton("🔵 HTML Encrypt"),     KeyboardButton("🔵 PHP Decoder")],
+        [KeyboardButton("🟢 User Info"),        KeyboardButton("🟢 JS Encrypt")],
+        [KeyboardButton("🔵 Bot Info"),         KeyboardButton("🔵 Developer Info")],
     ],
     resize_keyboard=True,
 )
