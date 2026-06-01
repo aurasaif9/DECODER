@@ -65,11 +65,11 @@ verified_users: set = set()
 
 MAIN_MENU = ReplyKeyboardMarkup(
     [
-        [KeyboardButton("🔵 Source Code"),      KeyboardButton("🔵 HTML Decode")],
-        [KeyboardButton("🟢 Python Decoder"),   KeyboardButton("🟢 Python Encrypt")],
-        [KeyboardButton("🔵 HTML Encrypt"),     KeyboardButton("🔵 PHP Decoder")],
-        [KeyboardButton("🟢 User Info"),        KeyboardButton("🟢 JS Encrypt")],
-        [KeyboardButton("🔵 Bot Info"),         KeyboardButton("🔵 Developer Info")],
+        [KeyboardButton("💻 Source Code"),      KeyboardButton("🌐 HTML Decode")],
+        [KeyboardButton("🐍 Python Decoder"),   KeyboardButton("🔐 Python Encrypt")],
+        [KeyboardButton("🧬 HTML Encrypt"),     KeyboardButton("🐘 PHP Decoder")],
+        [KeyboardButton("👤 User Info"),        KeyboardButton("⚡ JS Encrypt")],
+        [KeyboardButton("🤖 Bot Info"),         KeyboardButton("👨‍💻 Developer Info")],
     ],
     resize_keyboard=True,
 )
@@ -1434,11 +1434,11 @@ async def bot_info_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "  • 🟦 @HTMLObfuscateBot decoder (DHIRAJ9619) — FULL decode\n"
         "  • 🟢 Source Code Viewer\n"
         "  • 🟢 HTML Encrypt (XOR+Base64)\n"
-        "  • 🟢 Python Decoder (Advanced RUNNER_CODE — exec/eval hook)\n"
+        "  • 🐍 Python Decoder (Advanced RUNNER_CODE — exec/eval hook)\n"
         "  • 🟦 Python Encrypt\n"
         "  • 🟦 JS Encrypt\n"
         "  • 🟦 PHP Decoder\n"
-        "  • 🟢 User Info\n\n"
+        "  • 👤 User Info\n\n"
         "💬 *Decode করতে পারে:*\n"
         "@HTMLObfuscateBot (FULL — password+logic সহ) • PHPKodo\n"
         "PHPCabbo • PHPKobo • Base64 • gzinflate • str\\_rot13\n"
@@ -1487,16 +1487,16 @@ _WEBAPP_HTML = """<!DOCTYPE html>
 <body>
   <div class="header"><h2>⚡ AURA X TEAM</h2><p>Select a tool below</p></div>
   <div class="grid">
-    <button class="btn btn-blue"  onclick="send('🔵 Source Code')"><span class="icon">🌐</span> Source Code</button>
-    <button class="btn btn-blue"  onclick="send('🔵 HTML Decode')"><span class="icon">🔒</span> HTML Decode</button>
-    <button class="btn btn-green" onclick="send('🟢 Python Decoder')"><span class="icon">🐍</span> Python Decoder</button>
-    <button class="btn btn-green" onclick="send('🟢 Python Encrypt')"><span class="icon">🔐</span> Python Encrypt</button>
-    <button class="btn btn-blue"  onclick="send('🔵 HTML Encrypt')"><span class="icon">🔒</span> HTML Encrypt</button>
-    <button class="btn btn-blue"  onclick="send('🔵 PHP Decoder')"><span class="icon">🕷️</span> PHP Decoder</button>
-    <button class="btn btn-green" onclick="send('🟢 User Info')"><span class="icon">👤</span> User Info</button>
-    <button class="btn btn-green" onclick="send('🟢 JS Encrypt')"><span class="icon">🔏</span> JS Encrypt</button>
-    <button class="btn btn-blue"  onclick="send('🔵 Bot Info')"><span class="icon">ℹ️</span> Bot Info</button>
-    <button class="btn btn-blue"  onclick="send('🔵 Developer Info')"><span class="icon">👨‍💻</span> Dev Info</button>
+    <button class="btn btn-blue"  onclick="send('💻 Source Code')"><span class="icon">🌐</span> Source Code</button>
+    <button class="btn btn-blue"  onclick="send('🌐 HTML Decode')"><span class="icon">🔒</span> HTML Decode</button>
+    <button class="btn btn-green" onclick="send('🐍 Python Decoder')"><span class="icon">🐍</span> Python Decoder</button>
+    <button class="btn btn-green" onclick="send('🔐 Python Encrypt')"><span class="icon">🔐</span> Python Encrypt</button>
+    <button class="btn btn-blue"  onclick="send('🧬 HTML Encrypt')"><span class="icon">🔒</span> HTML Encrypt</button>
+    <button class="btn btn-blue"  onclick="send('🐘 PHP Decoder')"><span class="icon">🕷️</span> PHP Decoder</button>
+    <button class="btn btn-green" onclick="send('👤 User Info')"><span class="icon">👤</span> User Info</button>
+    <button class="btn btn-green" onclick="send('⚡ JS Encrypt')"><span class="icon">🔏</span> JS Encrypt</button>
+    <button class="btn btn-blue"  onclick="send('🤖 Bot Info')"><span class="icon">ℹ️</span> Bot Info</button>
+    <button class="btn btn-blue"  onclick="send('👨‍💻 Developer Info')"><span class="icon">👨‍💻</span> Dev Info</button>
   </div>
   <script>
     const tg=window.Telegram.WebApp;tg.ready();tg.expand();
@@ -1542,8 +1542,8 @@ def main():
 
     decode_conv = ConversationHandler(
         entry_points=[
-            MessageHandler(filters.Regex("^🔵 HTML Decode$"), html_decode_ask),
-            MessageHandler(WebAppDataFilter("🔵 HTML Decode"), html_decode_ask),
+            MessageHandler(filters.Regex("^🌐 HTML Decode$"), html_decode_ask),
+            MessageHandler(WebAppDataFilter("🌐 HTML Decode"), html_decode_ask),
         ],
         states={
             WAITING_FOR_DECODE: [
@@ -1556,8 +1556,8 @@ def main():
 
     source_conv = ConversationHandler(
         entry_points=[
-            MessageHandler(filters.Regex("^🔵 Source Code$"), source_code_ask),
-            MessageHandler(WebAppDataFilter("🔵 Source Code"), source_code_ask),
+            MessageHandler(filters.Regex("^💻 Source Code$"), source_code_ask),
+            MessageHandler(WebAppDataFilter("💻 Source Code"), source_code_ask),
         ],
         states={
             WAITING_FOR_SOURCE: [
@@ -1569,8 +1569,8 @@ def main():
 
     encrypt_conv = ConversationHandler(
         entry_points=[
-            MessageHandler(filters.Regex("^🔵 HTML Encrypt$"), html_encrypt_ask),
-            MessageHandler(WebAppDataFilter("🔵 HTML Encrypt"), html_encrypt_ask),
+            MessageHandler(filters.Regex("^🧬 HTML Encrypt$"), html_encrypt_ask),
+            MessageHandler(WebAppDataFilter("🧬 HTML Encrypt"), html_encrypt_ask),
         ],
         states={
             WAITING_FOR_ENCRYPT: [
@@ -1583,8 +1583,8 @@ def main():
 
     py_decode_conv = ConversationHandler(
         entry_points=[
-            MessageHandler(filters.Regex("^🟢 Python Decoder$"), python_decoder_ask),
-            MessageHandler(WebAppDataFilter("🟢 Python Decoder"), python_decoder_ask),
+            MessageHandler(filters.Regex("^🐍 Python Decoder$"), python_decoder_ask),
+            MessageHandler(WebAppDataFilter("🐍 Python Decoder"), python_decoder_ask),
         ],
         states={
             WAITING_FOR_PY_DECODE: [
@@ -1597,8 +1597,8 @@ def main():
 
     py_encrypt_conv = ConversationHandler(
         entry_points=[
-            MessageHandler(filters.Regex("^🟢 Python Encrypt$"), python_encrypt_ask),
-            MessageHandler(WebAppDataFilter("🟢 Python Encrypt"), python_encrypt_ask),
+            MessageHandler(filters.Regex("^🔐 Python Encrypt$"), python_encrypt_ask),
+            MessageHandler(WebAppDataFilter("🔐 Python Encrypt"), python_encrypt_ask),
         ],
         states={
             WAITING_FOR_PY_ENCRYPT: [
@@ -1611,8 +1611,8 @@ def main():
 
     js_encrypt_conv = ConversationHandler(
         entry_points=[
-            MessageHandler(filters.Regex("^🟢 JS Encrypt$"), js_encrypt_ask),
-            MessageHandler(WebAppDataFilter("🟢 JS Encrypt"), js_encrypt_ask),
+            MessageHandler(filters.Regex("^⚡ JS Encrypt$"), js_encrypt_ask),
+            MessageHandler(WebAppDataFilter("⚡ JS Encrypt"), js_encrypt_ask),
         ],
         states={
             WAITING_FOR_JS_ENCRYPT: [
@@ -1625,8 +1625,8 @@ def main():
 
     php_decode_conv = ConversationHandler(
         entry_points=[
-            MessageHandler(filters.Regex("^🔵 PHP Decoder$"), php_decoder_ask),
-            MessageHandler(WebAppDataFilter("🔵 PHP Decoder"), php_decoder_ask),
+            MessageHandler(filters.Regex("^🐘 PHP Decoder$"), php_decoder_ask),
+            MessageHandler(WebAppDataFilter("🐘 PHP Decoder"), php_decoder_ask),
         ],
         states={
             WAITING_FOR_PHP_DECODE: [
@@ -1647,9 +1647,9 @@ def main():
     app.add_handler(js_encrypt_conv)
     app.add_handler(php_decode_conv)
 
-    app.add_handler(MessageHandler(filters.Regex("^🟢 User Info$"),      user_info))
-    app.add_handler(MessageHandler(filters.Regex("^🔵 Bot Info$"),       bot_info_cmd))
-    app.add_handler(MessageHandler(filters.Regex("^🔵 Developer Info$"), developer_info))
+    app.add_handler(MessageHandler(filters.Regex("^👤 User Info$"),      user_info))
+    app.add_handler(MessageHandler(filters.Regex("^🤖 Bot Info$"),       bot_info_cmd))
+    app.add_handler(MessageHandler(filters.Regex("^👨‍💻 Developer Info$"), developer_info))
 
     async def web_app_simple_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if update.message is None or update.message.web_app_data is None:
@@ -1657,11 +1657,11 @@ def main():
         if not await _require_verified(update):
             return
         data = update.message.web_app_data.data
-        if data == "🟢 User Info":
+        if data == "👤 User Info":
             await user_info(update, context)
-        elif data == "🔵 Bot Info":
+        elif data == "🤖 Bot Info":
             await bot_info_cmd(update, context)
-        elif data == "🔵 Developer Info":
+        elif data == "👨‍💻 Developer Info":
             await developer_info(update, context)
 
     app.add_handler(MessageHandler(filters.StatusUpdate.WEB_APP_DATA, web_app_simple_handler))
